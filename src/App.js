@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Youtube from './common/youtube-component';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Rahii </p>
-      </header>
-    </div>
+    <Youtube/>
   );
 }
 
