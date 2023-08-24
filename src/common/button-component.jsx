@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 function Button(props){
-    
-    
-        const {className,text,event,disabled} = props;
-        return (
+    const { text, event, className, disabled } = props;
+     return (
             <button
+            className="btn btn-outline-success"
+            type="submit"
+            text="Search"
             onClick={event}
-            className={className}
-            disabled={disabled}
             >
-            {text}
+            Search
 
             </button>
          

@@ -1,13 +1,28 @@
-function Suggestion() {
+import React from "react";
+import Sidebarvideos from "./sidebar-component";
+function Suggestion(props) {
+    const videos = props.videos;
     return ( 
-        <div className="col-lg-4 mt-3 mt-lg-0">
+        <div className="col-lg-4 col-md-4 mt-3 mt-lg-0">
                 <h2>Suggested Videos</h2>
-                <ul className="list-group">
-                    <li className="list-group-item">Suggested Video 1</li>
-                    <li className="list-group-item">Suggested Video 2</li>
-                    <li className="list-group-item">Suggested Video 3</li>
-                    {/* <!-- Add more suggestion items --> */}
-                </ul>
+                <div class="list-group">
+                {videos.map((video, index) => {
+                    return (
+                        <React.Fragment key={index}>
+                            <Sidebarvideos
+                                key={index}
+                                videoId={video.id.videoId}
+                                imgUrl={video.snippet.thumbnails.high.url}
+                                title={video.snippet.title}
+                                description={video.snippet.description}
+                                channelTitle={video.snippet.channelTitle}
+                                selectPlayingVideo={props.selectPlayingVideo}
+                            />
+                            <br></br>
+                        </React.Fragment>
+                    );
+                })}
+            </div>
             </div>
      );
 }
